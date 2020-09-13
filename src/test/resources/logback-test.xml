@@ -1,0 +1,36 @@
+<configuration scan="true" scanPeriod="29 seconds">
+
+    <appender name="STDOUT_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_MASKING_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_LOGSTASH_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_LOGSTASH_MASKING_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT_APPENDER"/>
+        <appender-ref ref="STDOUT_MASKING_APPENDER"/>
+        <appender-ref ref="STDOUT_LOGSTASH_APPENDER"/>
+        <appender-ref ref="STDOUT_LOGSTASH_MASKING_APPENDER"/>
+    </root>
+
+</configuration>

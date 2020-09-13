@@ -21,6 +21,7 @@
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <junit.pre.jupiter.version>4.13</junit.pre.jupiter.version>
         <logback.version>1.2.3</logback.version>
+        <logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
         <mockito.version>3.3.3</mockito.version>
@@ -43,6 +44,12 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
             </dependency>
 
             <!-- TESTING stuff - BEGIN -->
@@ -142,6 +149,7 @@
         </dependencies>
     </dependencyManagement>
 
+
     <dependencies>
 
         <dependency>
@@ -149,11 +157,17 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
-        <!-- TESTING stuff - BEGIN -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+        </dependency>
+
+        <!-- TESTING stuff - BEGIN -->
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
